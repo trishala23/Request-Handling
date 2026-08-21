@@ -1,0 +1,4 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root{font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:#102033;background:#f6f8fb}button,a,input,textarea,select{outline-color:#2563eb}.code{font-family:"SFMono-Regular",Consolas,monospace}.node{transition:background-color .2s,transform .2s}@media (prefers-reduced-motion: reduce){*,.node{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
