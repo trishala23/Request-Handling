@@ -1,6 +1,6 @@
 export type Question={id:string;type:'mc'|'tf'|'match';prompt:string;options?:string[];answer:string|string[];explanation:string;pairs?:[string,string][]};
 export const questions:Question[]=[
-{id:'q1',type:'mc',prompt:'VVR calls CTXDA. What is VVR for that call?',options:['Server','Client','Database','Proxy'],answer:'Client',explanation:'The caller starts the request, so VVR is the client.'},
+{id:'q1',type:'mc',prompt:'ServiceA calls Serviceb. What is ServiceA for that call?',options:['Server','Client','Database','Proxy'],answer:'Client',explanation:'The caller starts the request, so ServiceA is the client.'},
 {id:'q2',type:'tf',prompt:'Client/server roles are always fixed forever.',options:['True','False'],answer:'False',explanation:'Roles are per request.'},
 {id:'q3',type:'mc',prompt:'Which HTTP method usually reads a resource?',options:['GET','POST','PATCH','DELETE'],answer:'GET',explanation:'GET requests retrieve representations.'},
 {id:'q4',type:'mc',prompt:'In /vehicles/WDD123?region=EMEA, region is a:',options:['Header','Query parameter','Path parameter','Body'],answer:'Query parameter',explanation:'It appears after the question mark.'},
