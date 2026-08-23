@@ -37,8 +37,8 @@ describe('quiz', () => {
 });
 
 describe('request builder', () => {
-  it('generates request line with query', () => expect(buildHttpRequest('GET', '/vehicles/WDD123', 'region=EMEA', '', '')).toContain('GET /vehicles/WDD123?region=EMEA HTTP/1.1'));
-  it('includes headers and body without making network calls', () => { const r = buildHttpRequest('POST', '/vehicles', '', 'Authorization: Bearer xxx', '{"vin":"1"}'); expect(r).toContain('Authorization'); expect(r).toContain('{"vin":"1"}'); });
+  it('generates request line with query', () => expect(buildHttpRequest('GET', '/orders/ORD123', 'status=PENDING', '', '')).toContain('GET /orders/ORD123?status=PENDING HTTP/1.1'));
+  it('includes headers and body without making network calls', () => { const r = buildHttpRequest('POST', '/orders', '', 'Authorization: Bearer xxx', '{"orderId":"1"}'); expect(r).toContain('Authorization'); expect(r).toContain('{"orderId":"1"}'); });
 });
 
 describe('phase 2 lesson navigation', () => {
