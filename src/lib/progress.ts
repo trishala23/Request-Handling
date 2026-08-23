@@ -1,7 +1,9 @@
+import type {Lesson} from '../data/lessons';
 export type Progress={completedLessons:string[];quizBestScore:number;lastVisitedLesson:string|null};
 export const defaultProgress:Progress={completedLessons:[],quizBestScore:0,lastVisitedLesson:null};
 const key='javaBackendStudyGuide.progress';
 export function calculateProgress(completed:string[],total:number){return total===0?0:Math.round((new Set(completed).size/total)*100)}
+export function calculatePhaseProgress(completed:string[],lessons:Lesson[],phase:1|2){const phaseLessons=lessons.filter(l=>l.phase===phase);return calculateProgress(completed.filter(id=>phaseLessons.some(l=>l.id===id)),phaseLessons.length)}
 export function loadProgress(storage:Storage=localStorage):Progress{try{return {...defaultProgress,...JSON.parse(storage.getItem(key)||'{}')}}catch{return defaultProgress}}
 export function saveProgress(p:Progress,storage:Storage=localStorage){storage.setItem(key,JSON.stringify(p))}
 export function completeLesson(p:Progress,id:string):Progress{return {...p,completedLessons:Array.from(new Set([...p.completedLessons,id])),lastVisitedLesson:id}}
